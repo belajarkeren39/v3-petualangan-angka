@@ -1,0 +1,24 @@
+PANDUAN MENJALANKAN DI PAPAN INTERAKTIF (IFP) — SENSOR GERAKAN MEMUKUL
+
+SENSOR BARU
+- Tidak lagi memakai MediaPipe (telunjuk/cubit). Kamera membaca GERAKAN tangan di area tiap
+  perisai jawaban. Pukul-pukul perisai yang benar 3x -> perisai pecah -> jawaban terkirim.
+- Tidak butuh internet, tidak butuh unduh model (unduh_model.py tidak diperlukan lagi).
+- Layar kalibrasi: lambaikan tangan, bar "Gerakan terbaca" harus naik. Lalu pukul Target Uji 3x.
+- Tombol "Kepekaan" (Rendah/Sedang/Tinggi): naikkan bila pukulan sulit terbaca,
+  turunkan bila perisai terpilih sendiri karena orang lewat.
+
+CARA PAKAI
+1. Buka lewat https:// (mis. GitHub Pages), bukan file://.
+2. Chrome/Edge terbaru; izinkan kamera (pilih "Selalu izinkan"); buka penutup privasi kamera IFP.
+3. Berdiri/duduk sekitar 1-2 m dari kamera, ruangan cukup terang, gerakkan tangan cepat ke target.
+4. Satu orang memukul satu perisai pada satu waktu; gerakan badan besar di depan kamera bisa ikut terbaca.
+
+LAYAR PENUH
+- Bila IFP mengeluarkan layar penuh (mis. saat dialog izin kamera), muncul tulisan
+  "Ketuk layar untuk kembali ke Layar Penuh"; ketukan berikutnya otomatis masuk layar penuh lagi.
+- Stream kamera dipakai ulang antar layar, sehingga dialog izin tidak muncul berulang.
+
+FILE
+- aset/js/game.js, aset/css/tailwind-static.css, index.html: timpa yang lama.
+- game.js di folder utama adalah versi lama dan TIDAK dipakai.

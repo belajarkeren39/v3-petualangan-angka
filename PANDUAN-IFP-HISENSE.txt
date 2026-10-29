@@ -1,0 +1,79 @@
+PETUALANGAN ANGKA V2 — PANDUAN IFP HISENSE 75 INCI
+
+Sasaran penggunaan: Google Chrome, kamera bawaan IFP.
+Model IFP dan versi sistem pengguna belum diketahui. Ukuran layar saja
+tidak menentukan dukungan kamera Chrome.
+
+CARA MEMAKAI DI IFP
+1. Ekstrak seluruh ZIP. Pertahankan index.html dan seluruh folder aset.
+2. Untuk Chrome di IFP, gunakan alamat HTTPS yang menyajikan seluruh folder
+   game ini. Minta pengelola web sekolah memasang folder sebagai situs statis.
+   Jangan hanya mengunggah index.html.
+3. Jika memakai server pada perangkat yang sama, localhost dapat digunakan.
+   Alamat HTTP IP jaringan seperti http://192.168.x.x dari perangkat lain
+   bukan pengganti HTTPS untuk izin kamera.
+4. Tutup aplikasi lain yang sedang memakai kamera bawaan.
+5. Buka game di Chrome. Tekan Mulai Petualangan, lalu Izinkan Kamera.
+   Jika perlu, buka setelan situs Chrome > Kamera > Izinkan. Pada sistem
+   IFP yang menyediakan izin aplikasi, izinkan kamera untuk aplikasi Chrome.
+6. Pilih "Kamera bawaan / otomatis". Bila ada beberapa kamera, pilih kamera
+   bawaan dari daftar. Gambar kamera harus terlihat, tanpa background anime.
+7. Tunggu status "kamera aktif • sensor siap". Angkat telapak tangan,
+   luruskan telunjuk, dan pastikan indikator menjadi "1 tangan" atau "2 tangan".
+   Sesuaikan posisi sehingga seluruh tangan terlihat jelas, bukan terlalu
+   kecil dalam gambar. Jarak yang tepat bergantung pada kamera bawaan.
+8. Bidik Target Uji dengan telunjuk. Tahan sekitar 0,7 detik, lalu cubit
+   jempol-telunjuk; atau tahan sekitar 1,4 detik untuk memilih otomatis.
+9. Saat bermain, tombol "Hubungkan Kamera" mencoba membuka ulang kamera.
+   Jika kamera terputus atau izin dicabut, perbaiki izin lalu tekan tombol itu.
+10. Gunakan Layar Penuh dan orientasi lanskap. Soal dan target diperbesar
+    pada resolusi desktop tinggi, termasuk 3840×2160.
+
+STATUS YANG HARUS DIPERIKSA
+- Kamera belum aktif: periksa izin Chrome, izin sistem IFP, dan aplikasi lain.
+- Kamera aktif, memuat sensor: tunggu proses pemuatan.
+- Kamera aktif, sensor belum siap: pastikan semua aset/sensor terpasang.
+  Jika dibuka langsung sebagai file, pemuatan sensor menggunakan internet.
+- Sensor siap, 0 tangan: perbaiki pencahayaan dan posisi tangan di kamera.
+- Tidak ada kamera dalam daftar meski izin sudah diberikan: kamera mungkin
+  belum diekspos oleh sistem IFP ke Chrome. Periksa pembaruan sistem/Chrome
+  atau minta pengelola IFP memeriksa dukungan kamera browser.
+
+CARA KERJA DAN BATAS PENGUJIAN
+Background, efek cahaya, dan karakter tengah disembunyikan saat kalibrasi
+dan permainan; gambar kamera tampil penuh. Sensor membaca video asli,
+bukan komposisi background atau antarmuka layar.
+Model tangan, mesin WASM, dan pustaka MediaPipe disertakan di aset/sensor.
+Pada HTTPS/localhost, pemuatan mengutamakan berkas lokal; CDN menjadi
+cadangan. Membuka index.html langsung (file://) masih memerlukan internet
+untuk sensor karena pembatasan pemuatan modul oleh browser.
+
+Diuji di Chrome desktop:
+- Kamera simulasi 640×480 dan izin kamera.
+- Model lokal tanpa koneksi eksternal, mode GPU dan mode CPU.
+- Gambar uji MediaPipe: dua tangan, masing-masing 21 titik.
+- Alur bidik otomatis sampai jawaban benar memakai landmark simulasi.
+- Pemetaan layar 3840×2160, target besar, arena tanpa ilustrasi.
+- 6.000 soal acak lintas kelas dan 25 soal per sesi per kelas.
+Perangkat IFP Hisense fisik dan kamera bawaannya BELUM diuji.
+Keberhasilan di IFP harus dikonfirmasi dengan Target Uji pada langkah 8.
+
+SOAL MUDAH
+Kelas 1: 0–5, tambah/kurang.
+Kelas 2: 0–20, tambah/kurang.
+Kelas 3: 0–50, tambah/kurang dan tabel kali/bagi dasar.
+Kelas 4: 0–100, tambah/kurang dan tabel kali/bagi dasar.
+Kelas 5: 0–200, tambah/kurang puluhan bulat dan tabel kali/bagi dasar.
+Kelas 6: 0–500, tambah/kurang puluhan bulat dan tabel kali/bagi dasar.
+Semua soal satu operasi, tanpa menyimpan/meminjam, tanpa bilangan hilang
+atau operasi campuran. Pembagian selalu menghasilkan bilangan bulat.
+
+RUJUKAN
+MediaPipe Hand Landmarker:
+https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker/web_js
+Izin dan konteks aman kamera browser:
+https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+Pustaka MediaPipe Tasks Vision 0.10.14:
+https://www.npmjs.com/package/@mediapipe/tasks-vision/v/0.10.14
+Model resmi hand_landmarker float16 versi 1:
+https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task

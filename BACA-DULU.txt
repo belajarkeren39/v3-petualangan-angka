@@ -1,0 +1,49 @@
+PETUALANGAN ANGKA V2 — ANIME 2D / MODE MUDAH / KAMERA IFP
+
+CARA MEMBUKA
+1. Ekstrak seluruh ZIP terlebih dahulu.
+2. Buka index.html menggunakan Chrome atau Edge.
+3. Pilih mode, kelas, dan durasi, lalu Mulai Petualangan.
+4. Jika tanpa kamera, pilih Lewati Latihan & Mulai.
+5. Klik/sentuh jawaban atau gunakan Q/W/A/S (P1), I/O/K/L (P2).
+
+Buka pratinjau-animasi.html untuk melihat karakter berukuran besar
+dan mencoba animasi menyapa, jawaban benar, dan jawaban salah.
+
+ISI FOLDER
+index.html                    : game utama
+pratinjau-animasi.html         : demo animasi karakter
+aset/karakter/                : PNG transparan Raka dan Robo Arka
+aset/background/              : ilustrasi Kerajaan Angka
+aset/css/                     : gaya game dan animasi
+aset/js/                      : logika game dan reaksi karakter
+aset/vendor/                  : pustaka tampilan Tailwind lokal
+PROMPT-ILUSTRASI.txt           : prompt ilustrasi dan metode pembuatan
+
+ANIMASI
+Animasi memakai transformasi CSS pada ilustrasi 2D PNG: gerak idle,
+melayang, menyapa, melompat ketika benar, dan bergoyang ketika salah.
+Bukan video atau animasi rangka/frame-by-frame. Animasi mengikuti
+pengaturan Kurangi Gerakan pada perangkat dan berhenti saat game dijeda.
+
+AKSES INTERNET & KAMERA
+Ilustrasi, animasi, tampilan, serta mode klik/keyboard tersedia lokal.
+Untuk kamera IFP Chrome, baca PANDUAN-IFP-HISENSE.txt.
+Sensor lokal disertakan di aset/sensor dan dimuat melalui HTTPS/localhost.
+Jika membuka file HTML langsung, sensor menggunakan internet.
+Saat kalibrasi dan permainan: background dan karakter tengah disembunyikan,
+kamera ditampilkan penuh. Klik/keyboard tetap bisa digunakan tanpa kamera.
+
+Sumber: file HTML yang diberikan pengguna; mekanik permainan dan skor dipertahankan; soal disederhanakan.
+Ilustrasi dibuat menggunakan imagegen bawaan. Aset menggunakan jalur relatif;
+jangan memindahkan index.html sendirian tanpa folder aset.
+
+PEMERIKSAAN
+Diuji di Chrome: pemuatan aset lokal, mode offline klik/keyboard,
+jawaban benar/salah dan reaksi karakter, jeda/lanjut, hasil, duel 2P,
+pengaturan kurangi gerakan, serta tampilan desktop dan lanskap 844x390.
+Sensor kamera fisik belum diuji. Untuk ponsel gunakan orientasi lanskap.
+
+REVISI V2
+Semua kelas memakai soal mudah satu langkah. Rentang angka: 5, 20, 50,
+100, 200, 500 untuk Kelas 1–6. Panduan IFP berisi rincian dan hasil uji.
